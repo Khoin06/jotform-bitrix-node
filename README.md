@@ -18,42 +18,34 @@
 - Tài khoản Jotform
 - Tài khoản Bitrix24
 
-## 🔧 Cài đặt
+## 🔧 Cài đặt  
 
-### 1. Clone repository
-
-```bash
-git clone <repository-url>
-cd jotform-bitrix24-integration
-
-### 2. Cài đặt dependencies
-
-```bash
-npm install
+### 1.Clone repository
+- git clone <repository-url>
+- cd jotform-bitrix24-integration
+ 
+### 2.Cài đặt dependencies
+- npm install
 
 ### 3.Cấu hình environment variables
-- Tạo file .env từ template:
+- Tạo file .env từ template: cp .env.example .env
+- Chỉnh sửa file .env với thông tin của bạn:
 
-```bash
-cp .env.example .env
+#### Server Configuration
+- PORT=3000
+- NODE_ENV=development
 
--Chỉnh sửa file .env với thông tin của bạn:
-```bash
-# Server Configuration
-PORT=3000
-NODE_ENV=development
+#### Jotform Configuration
+- JOTFORM_API_KEY=your_jotform_api_key_here
+- JOTFORM_FORM_ID=your_form_id_here
 
-# Jotform Configuration
-JOTFORM_API_KEY=your_jotform_api_key_here
-JOTFORM_FORM_ID=your_form_id_here
+#### Bitrix24 Configuration
+- BITRIX24_WEBHOOK_URL=https://your-domain.bitrix24.com/rest/1/your-webhook-token
 
-# Bitrix24 Configuration
-BITRIX24_WEBHOOK_URL=https://your-domain.bitrix24.com/rest/1/your-webhook-token
+#### Logging
+- LOG_LEVEL=info
 
-# Logging
-LOG_LEVEL=info
-
-##🔑 Lấy thông tin xác thực
+## 🔑 Lấy thông tin xác thực
 ### 1. Jotform API Key
 - Đăng nhập vào Jotform
 - Truy cập My Settings → API
@@ -62,9 +54,9 @@ LOG_LEVEL=info
 
 ### 2. Jotform Form ID
 - Tạo biểu mẫu mới trên Jotform với các trường:
-- Họ và tên (Full Name)
-- Số điện thoại (Phone Number)
-- Email
++ Họ và tên (Full Name)
++ Số điện thoại (Phone Number)
++ Email
 
 - Lấy Form ID từ URL: https://www.jotform.com/your-form-id/edit
 - Copy vào JOTFORM_FORM_ID trong file .env
@@ -75,15 +67,7 @@ LOG_LEVEL=info
 - Tạo webhook mới với quyền (scope): crm
 - Copy URL và paste vào BITRIX24_WEBHOOK_URL trong file .env
 
-##🚀 Chạy ứng dụng
-- Development mode
-```bash
-npm run dev
-
--Production mode
-```bash
-npm start
-
-
--Ứng dụng sẽ chạy trên:
-👉 http://localhost:3000
+## 🚀 Chạy ứng dụng
+- Development mode: npm run dev
+- Production mode: npm start
+- Ứng dụng sẽ chạy trên: http://localhost:3000
